@@ -12,12 +12,19 @@ export default function Contacts() {
     return words[words.length - 1];
   };
 
+  const extractFirstName = (fullName) => {
+    const cleanedName = fullName
+      .replace(/^(Mr|Mrs|Ms|Miss|Dr)\.?\s+/i, "")
+      .trim();
+    const words = cleanedName.split(" ");
+    return words.length > 1 ? words[0] : null;
+  };
+
   const sortedItems = items.slice().sort((a, b) => {
     const lastNameA = extractLastName(a.name).toLowerCase();
     const lastNameB = extractLastName(b.name).toLowerCase();
-
-    const firstNameA = a.name.split(" ")[0].toLowerCase();
-    const firstNameB = b.name.split(" ")[0].toLowerCase();
+    const firstNameA = extractFirstName(a.name)?.toLowerCase();
+    const firstNameB = extractFirstName(b.name)?.toLowerCase();
 
     if (lastNameA !== lastNameB) {
       return lastNameA.localeCompare(lastNameB);
