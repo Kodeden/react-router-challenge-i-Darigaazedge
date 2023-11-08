@@ -26,11 +26,29 @@ export default function Contacts() {
     }
   });
 
+  const groupedContacts = {};
+  sortedItems.forEach((contact) => {
+    const lastName = extractLastName(contact.name)[0].toUpperCase();
+    if (!groupedContacts[lastName]) {
+      groupedContacts[lastName] = [];
+    }
+    groupedContacts[lastName].push(contact);
+  });
+
   return (
-    <ol className="list-decimal space-y-4">
-      {sortedItems.map((contact) => (
-        <Contact key={contact.id} contact={contact} />
+    <div>
+      {Object.entries(groupedContacts).map(([letter, contacts]) => (
+        <div key={letter}>
+          <h2>{letter}</h2>
+          <ul>
+            {contacts.map((contact) => (
+              <li key={contact.id}>
+                <Contact contact={contact} />
+              </li>
+            ))}
+          </ul>
+        </div>
       ))}
-    </ol>
+    </div>
   );
 }
