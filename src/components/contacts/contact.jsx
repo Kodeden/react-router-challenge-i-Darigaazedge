@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function Contact({ contact }) {
   return (
     <li className="font-medium">
@@ -8,3 +10,7 @@ export default function Contact({ contact }) {
     </li>
   );
 }
+
+Contact.propTypes = {
+  contact: PropTypes.string.isRequired,
+};

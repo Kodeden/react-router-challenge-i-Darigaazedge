@@ -43,7 +43,7 @@ export default function Contacts() {
   });
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       {Object.entries(groupedContacts).map(([letter, contacts]) => (
         <div key={letter}>
           <h2>{letter}</h2>
