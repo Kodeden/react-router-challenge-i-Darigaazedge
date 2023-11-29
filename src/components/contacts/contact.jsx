@@ -6,7 +6,7 @@ export default function Contact({ contact }) {
     <li className="font-medium">
       {contact.contact}
       <small className="block space-x-2 italic">
-        <Link to={`/contacts/${contact.name}`}>{contact.name}</Link>
+        <Link to={`/contacts/${contact.id}`}>{contact.name}</Link>
       </small>
     </li>
   );

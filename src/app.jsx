@@ -15,7 +15,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} loader={loadContacts} />
       <Route
         path="/contact/:id"
-        element={ContactDetails}
+        element={<ContactDetails />}
         loader={loadContacts}
       />
     </Route>,

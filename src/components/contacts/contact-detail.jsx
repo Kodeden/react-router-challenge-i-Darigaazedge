@@ -5,7 +5,7 @@ export default function ContactDetails({ contacts }) {
   const contact = contacts.find((c) => c.id === parseInt(id, 10));
 
   if (!contact) {
-    return <div>contact no found</div>;
+    return <div>contact not found</div>;
   }
   return (
     <main>
