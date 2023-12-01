@@ -8,6 +8,7 @@ export default function ContactDetails({ contacts }) {
     return <div>contact not found</div>;
   }
   return (
+    // TODO{jeremy.eastman}: Review this HTML. B/c of what's in `Layout`, you probably have crazy 🤡 nesting 🪹.
     <main>
       <img src={contact.img} alt={contact.name}></img>
       <h1>Contact Details</h1>

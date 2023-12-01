@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function Contact({ contact }) {
   return (
-    <li className="font-medium">
+    <li className="space-x-2 font-medium italic">
       {contact.contact}
-      <small className="block space-x-2 italic">
-        <Link to={`/contacts/${contact.id}`}>{contact.name}</Link>
-      </small>
+      <Link to={`/contacts/${contact.id}`}>{contact.name}</Link>
     </li>
   );
 }
