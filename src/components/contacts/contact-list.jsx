@@ -49,9 +49,7 @@ export default function Contacts() {
           <h2>{letter}</h2>
           <ul>
             {contacts.map((contact) => (
-              <li key={contact.id}>
-                <Contact contact={contact} />
-              </li>
+              <Contact key={contact.id} contact={contact} />
             ))}
           </ul>
         </div>
